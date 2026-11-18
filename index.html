@@ -99,6 +99,21 @@ h2{margin-bottom:2rem}
 .cls .row b{font:600 .8rem Unbounded;letter-spacing:.12em;text-transform:uppercase;color:var(--a2)}
 .cls .row span{color:#c2cbe8;line-height:1.5}
 @media(max-width:760px){.cls .row{grid-template-columns:1fr;gap:.4rem}}
+.quiz{display:flex;align-items:center;justify-content:center;gap:3vw;flex-wrap:wrap}
+.quiz .turn{max-width:min(560px,52vw)}
+.qr{height:min(58vh,520px);max-width:80vw;border-radius:22px;box-shadow:0 30px 80px rgba(110,231,255,.3);background:#46178f}
+@media(max-width:760px){.quiz .turn{max-width:86vw}.qr{height:auto;width:70vw}}
+.kbtn{position:fixed;z-index:6;right:24px;bottom:24px;display:flex;align-items:center;gap:.5rem;padding:.75rem 1.2rem;border-radius:99px;border:0;cursor:pointer;
+  font:700 .8rem Unbounded;letter-spacing:.08em;color:#fff;background:#46178f;box-shadow:0 10px 30px rgba(70,23,143,.6);transition:transform .2s}
+.kbtn:hover{transform:scale(1.06)}
+.kmodal{position:fixed;inset:0;z-index:20;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(7,10,20,.8);backdrop-filter:blur(8px)}
+.kmodal.open{display:flex}
+.kbox{position:relative;display:flex;flex-direction:column;align-items:center;gap:1rem;max-height:100%;overflow-y:auto;text-align:center}
+.kbox .qr{height:min(68vh,560px)}
+.kgo{display:inline-block;padding:.9rem 1.6rem;border-radius:14px;background:linear-gradient(90deg,var(--a1),var(--a2));color:#0b0f1f;font:700 .9rem Unbounded;text-decoration:none}
+.kx{position:absolute;top:0;right:0;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(20,26,50,.8);color:#fff;font-size:1.1rem;cursor:pointer}
+.kbox p{color:var(--mut);font-size:.9rem;max-width:40ch}
+@media(max-width:760px){.kbtn{bottom:84px;right:16px}.kbox .qr{height:auto;width:72vw}}
 .hearts{font-size:2.4rem;margin-top:1.4rem;animation:flt 3s ease-in-out infinite}
 </style>
 </head>
@@ -319,8 +334,11 @@ h2{margin-bottom:2rem}
 </section>
 
 <section class="slide final">
-  <img class="pic turn" src="img/cat-turn.jpg" alt="А теперь ваша очередь">
-  <p class="lead">Тест через <b>Kahoot!</b> · лучших ждут подарки 🎁</p>
+  <div class="quiz">
+    <img class="pic turn" src="img/cat-turn.jpg" alt="А теперь ваша очередь">
+    <a href="https://kahoot.it/?pin=01472674" target="_blank" rel="noopener"><img class="qr" src="img/kahoot-qr.png" alt="QR-код для входа в Kahoot, PIN 01472674"></a>
+  </div>
+  <p class="lead">Тест через <b>Kahoot!</b> · сканируйте QR или вводите PIN на kahoot.it · лучших ждут подарки 🎁</p>
 </section>
 
 <section class="slide final">
@@ -330,6 +348,16 @@ h2{margin-bottom:2rem}
   <div class="hearts">❤❤❤</div>
 </section>
 
+</div>
+
+<button class="kbtn" id="kbtn">🎯 Тест Kahoot</button>
+<div class="kmodal" id="kmodal">
+  <div class="kbox">
+    <button class="kx" id="kx" aria-label="Закрыть">✕</button>
+    <img class="qr" src="img/kahoot-qr.png" alt="QR-код для входа в Kahoot, PIN 01472674">
+    <a class="kgo" href="https://kahoot.it/?pin=01472674" target="_blank" rel="noopener">Открыть тест · PIN 01472674</a>
+    <p>Сканируйте QR камерой телефона или нажмите кнопку, если открыли сайт с телефона.</p>
+  </div>
 </div>
 
 <div class="ui">
@@ -348,6 +376,7 @@ slides.forEach((s,i)=>{
   const d=document.createElement('div');d.className='dot';d.onclick=()=>go(i);dots.appendChild(d);
 });
 function go(i){
+  if(document.getElementById('kmodal').classList.contains('open'))return;
   if(i<0||i>=slides.length)return;
   slides.forEach((s,k)=>{s.classList.toggle('active',k===i);s.classList.toggle('prev',k<i);});
   cur=i;
@@ -358,7 +387,13 @@ function go(i){
 }
 document.getElementById('prev').onclick=()=>go(cur-1);
 document.getElementById('next').onclick=()=>go(cur+1);
+const km=document.getElementById('kmodal');
+const kOpen=v=>km.classList.toggle('open',v);
+document.getElementById('kbtn').onclick=()=>kOpen(true);
+document.getElementById('kx').onclick=()=>kOpen(false);
+km.onclick=e=>{if(e.target===km)kOpen(false)};
 addEventListener('keydown',e=>{
+  if(km.classList.contains('open')){if(e.key==='Escape')kOpen(false);return}
   if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(cur+1)}
   if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(cur-1)}
 });
