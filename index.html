@@ -88,6 +88,18 @@ ul.chk li::before{content:attr(data-n);position:absolute;left:1rem;top:50%;trans
 .lead{max-width:80ch}
 .card h3{font-size:.98rem}.card p{font-size:.9rem}
 h2{margin-bottom:2rem}
+.tblw{overflow-x:auto;max-width:100%;border-radius:18px;border:1px solid rgba(160,180,255,.15);background:var(--card);backdrop-filter:blur(14px)}
+.tbl{width:100%;border-collapse:collapse;font-size:.95rem;min-width:560px}
+.tbl th{font:600 .7rem Unbounded;letter-spacing:.15em;text-transform:uppercase;color:var(--a1);text-align:left;padding:1rem 1.2rem;border-bottom:1px solid rgba(160,180,255,.2)}
+.tbl td{padding:.9rem 1.2rem;border-bottom:1px solid rgba(160,180,255,.08);color:#c2cbe8;line-height:1.45;vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td:first-child{font:600 .9rem Unbounded;color:var(--ink)}
+.cls{display:grid;gap:.9rem;max-width:90ch}
+.cls .row{display:grid;grid-template-columns:200px 1fr;gap:1.2rem;align-items:center;padding:1rem 1.3rem;background:var(--card);border:1px solid rgba(160,180,255,.12);border-radius:16px}
+.cls .row b{font:600 .8rem Unbounded;letter-spacing:.12em;text-transform:uppercase;color:var(--a2)}
+.cls .row span{color:#c2cbe8;line-height:1.5}
+@media(max-width:760px){.cls .row{grid-template-columns:1fr;gap:.4rem}}
+.hearts{font-size:2.4rem;margin-top:1.4rem;animation:flt 3s ease-in-out infinite}
 </style>
 </head>
 <body>
@@ -109,7 +121,15 @@ h2{margin-bottom:2rem}
 </section>
 
 <section class="slide">
-  <div class="tag">01 · Постановка задачи</div>
+  <div class="tag">01 · Управленческое решение</div>
+  <h2>Ключевой элемент <span class="grad">менеджмента</span></h2>
+  <p class="lead">От выбранных методов зависят <b>текущая работа организации</b> и её <b>долгосрочная конкурентоспособность</b>.</p>
+  <p class="lead">Рассмотрим путь от постановки проблемы и анализа данных до выбора альтернативы, внедрения и контроля.</p>
+  <div class="chain"><span>Проблема</span><i>→</i><span>Анализ данных</span><i>→</i><span>Выбор альтернативы</span><i>→</i><span>Внедрение</span><i>→</i><span>Контроль</span></div>
+</section>
+
+<section class="slide">
+  <div class="tag">02 · Постановка задачи</div>
   <h2>Решение начинается с <span class="grad">правильного вопроса</span></h2>
   <p class="lead sm">Любое правильное решение начинается с постановки задачи. <b>Цель — выбрать действие, которое ведёт к измеримому результату.</b> Сначала поймите, что именно нужно изменить и как будете понимать, что всё получилось.</p>
   <div class="sub">Логика процесса · 5 шагов</div>
@@ -124,7 +144,31 @@ h2{margin-bottom:2rem}
 </section>
 
 <section class="slide">
-  <div class="tag">02 · Классификация</div>
+  <div class="tag">03 · Классификация решений</div>
+  <h2>Как классифицируют <span class="grad">решения</span></h2>
+  <p class="lead sm">Классификация помогает соотнести управленческую задачу с <b>подходящим способом её разработки</b>.</p>
+  <div class="cls">
+    <div class="row"><b>Уровень управления</b><span>Стратегические — долгосрочное развитие; тактические — среднесрочные задачи подразделений; оперативные — повседневные процессы.</span></div>
+    <div class="row"><b>Новизна</b><span>Программируемые — стандартные ситуации с заданными алгоритмами; непрограммируемые — уникальные проблемы, требующие творческого подхода.</span></div>
+    <div class="row"><b>Способ принятия</b><span>Единолично руководителем или коллегиально — с участием команды и экспертов.</span></div>
+    <div class="row"><b>Подход к разработке</b><span>Формальный — расчёты; экспертный — профессиональный опыт; смешанный — сочетание расчётов и экспертных оценок.</span></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="tag">04 · Процесс</div>
+  <h2>Пять этапов <span class="grad">разработки решения</span></h2>
+  <div class="steps">
+    <div class="card"><div class="n">01</div><h3>Диагностика проблемы</h3><p>Собрать факты и отделить наблюдаемые симптомы от глубинных причин.</p></div>
+    <div class="card"><div class="n">02</div><h3>Формирование критериев</h3><p>Установить параметры, по которым будут оцениваться варианты.</p></div>
+    <div class="card"><div class="n">03</div><h3>Генерация альтернатив</h3><p>Найти широкий спектр возможных путей решения задачи.</p></div>
+    <div class="card"><div class="n">04</div><h3>Оценка и выбор</h3><p>Сравнить альтернативы по рискам, затратам и ожидаемому эффекту.</p></div>
+    <div class="card"><div class="n">05</div><h3>Внедрение и контроль</h3><p>Реализовать выбранный сценарий и отслеживать промежуточные результаты.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="tag">05 · Группы методов</div>
   <h2>Три группы <span class="grad">методов</span></h2>
   <p class="lead sm">Главное различие — на чём основано решение: <b>на расчётах, опыте или на том и другом</b>.</p>
   <div class="grid">
@@ -132,10 +176,21 @@ h2{margin-bottom:2rem}
     <div class="card"><div class="ico">🧠</div><div class="badge">Суждение</div><h3>Экспертные</h3><p>Знания, опыт и суждения специалистов. Они помогают действовать, когда точной информации не хватает.</p></div>
     <div class="card"><div class="ico">⚖️</div><div class="badge">Связка</div><h3>Смешанные</h3><p>Расчёты сочетаются с экспертной оценкой и с тем, как договариваются участники. Объединяют и цифры, и мнения людей.</p></div>
   </div>
+  <p class="lead">Формальные методы особенно полезны в <b>стабильных условиях</b>, когда параметры можно измерить количественно. Экспертные важны при <b>дефиците информации, высокой новизне или кризисе</b>.</p>
 </section>
 
 <section class="slide">
-  <div class="tag">03 · Формальные методы</div>
+  <div class="tag">06 · Неопределённость</div>
+  <h2>Неопределённость и <span class="grad">цена ошибки</span></h2>
+  <div class="grid">
+    <div class="card"><div class="ico">🗂️</div><h3>Качество информации</h3><p>Проверьте, насколько данные полны, актуальны и надёжны; отделите подтверждённые факты от предположений.</p></div>
+    <div class="card"><div class="ico">🌪️</div><h3>Изменчивость среды</h3><p>Оцените, насколько предсказуемы спрос, действия конкурентов, поставки и внутренние условия организации.</p></div>
+    <div class="card"><div class="ico">💥</div><h3>Последствия ошибки</h3><p>Сопоставьте возможный ущерб от неверного выбора с затратами на сбор дополнительной информации и снижение риска.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="tag">07 · Формальные методы</div>
   <h2>Проблема становится <span class="grad">структурой</span></h2>
   <p class="lead sm">Формализация помогает увидеть части проблемы, связи между ними и последствия возможных действий. Так легче понять, что на что влияет, прежде чем принимать решение.</p>
   <div class="flow">
@@ -151,21 +206,37 @@ h2{margin-bottom:2rem}
 </section>
 
 <section class="slide">
-  <div class="tag">04 · Критерии выбора</div>
-  <h2>Сравнивайте альтернативы <span class="grad">по одним правилам</span></h2>
-  <p class="lead sm">Когда у нас есть список вариантов, их нужно честно сравнить по единым правилам — каждую идею оцениваем по четырём критериям:</p>
+  <div class="tag">08 · Формальные инструменты</div>
+  <h2>Формальные инструменты <span class="grad">анализа</span></h2>
   <div class="grid">
-    <div class="card"><div class="ico">🚀</div><h3>Эффект</h3><p>Какой результат даст вариант и насколько он важен?</p></div>
-    <div class="card"><div class="ico">⏳</div><h3>Затраты</h3><p>Сколько потребуется денег, времени и внимания (сил)?</p></div>
-    <div class="card"><div class="ico">⚠️</div><h3>Риски</h3><p>Что может пойти не так и можно ли будет отменить решение?</p></div>
-    <div class="card"><div class="ico">🎯</div><h3>Согласованность</h3><p>Совпадает ли решение со стратегией и интересами команды?</p></div>
+    <div class="card"><div class="ico">🧮</div><h3>Матрица решений</h3><p>Сопоставьте альтернативы по одним и тем же критериям. Если критерии имеют разную важность, зафиксируйте приоритеты и объясните способ их учёта.</p></div>
+    <div class="card"><div class="ico">💰</div><h3>Анализ затрат и эффекта</h3><p>Сравните необходимые затраты с ожидаемыми результатами и проверьте, не скрываются ли важные последствия за одним итоговым показателем.</p></div>
+    <div class="card"><div class="ico">🔮</div><h3>Прогнозирование и сценарии</h3><p>Оцените возможные результаты при разных предположениях о спросе, ресурсах или внешних условиях; отдельно обозначьте допущения.</p></div>
   </div>
-  <div class="quote">Критерии превращают список вариантов в <b>понятную систему выбора</b>. Так все альтернативы оцениваются одинаково.</div>
+</section>
+
+<section class="slide">
+  <div class="tag">09 · Критерии выбора</div>
+  <h2>Критерии помогают <span class="grad">сравнить варианты</span></h2>
+  <p class="lead sm">Критерии следует определить <b>до выбора</b>: они связывают цель решения с наблюдаемыми результатами. Набор критериев зависит от задачи; при необходимости им задают приоритеты.</p>
+  <div class="tblw">
+    <table class="tbl">
+      <thead><tr><th>Критерий</th><th>Проверочный вопрос</th><th>Возможная оценка</th></tr></thead>
+      <tbody>
+        <tr><td>🚀 Ожидаемый эффект</td><td>Какой результат даст вариант?</td><td>Изменение целевого показателя</td></tr>
+        <tr><td>⏳ Затраты и ресурсы</td><td>Какие средства, время и люди потребуются?</td><td>Бюджет, доступность ресурсов</td></tr>
+        <tr><td>📅 Срок</td><td>Когда появится результат?</td><td>Срок запуска и время до эффекта</td></tr>
+        <tr><td>⚠️ Риск</td><td>Что может помешать и каковы последствия?</td><td>Вероятность и тяжесть последствий</td></tr>
+        <tr><td>🛠️ Реализуемость</td><td>Можно ли выполнить решение в текущих условиях?</td><td>Компетенции, полномочия и ограничения</td></tr>
+        <tr><td>🎯 Согласованность</td><td>Совпадает ли решение со стратегией и интересами команды?</td><td>Соответствие целям и поддержка исполнителей</td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
 <section class="slide split">
   <div class="txt">
-    <div class="tag">05 · Экспертные методы</div>
+    <div class="tag">10 · Экспертные методы</div>
     <h2>Когда данных недостаточно, <span class="grad">помогает опыт</span></h2>
     <p class="lead">Если цифр и данных для расчётов не хватает, на помощь приходят экспертные методы.</p>
     <p class="lead">Экспертный метод <b>не отменяет анализа</b>. Он добавляет знания, которых ещё нет в цифрах, и помогает двигаться там, где данных мало.</p>
@@ -175,7 +246,17 @@ h2{margin-bottom:2rem}
 </section>
 
 <section class="slide">
-  <div class="tag">06 · Групповая работа</div>
+  <div class="tag">11 · Экспертные методы</div>
+  <h2>Как собрать <span class="grad">суждения</span></h2>
+  <div class="grid">
+    <div class="card"><div class="ico">🎙️</div><h3>Интервью и экспертная оценка</h3><p>Запросите мнение специалистов с релевантным опытом; уточните основания оценки и возможные ограничения их взгляда.</p></div>
+    <div class="card"><div class="ico">💡</div><h3>Мозговой штурм</h3><p>Сначала соберите широкий набор идей, не оценивая их по ходу генерации; затем отберите варианты по заранее заданным критериям.</p></div>
+    <div class="card"><div class="ico">🔄</div><h3>Метод Дельфи</h3><p>Организуйте несколько раундов независимых оценок с обратной связью между раундами, чтобы выявить сближение и разногласия во мнениях.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="tag">12 · Групповая работа</div>
   <h2>Больше идей — <span class="grad">больше ответственности</span></h2>
   <p class="lead sm">Команда генерирует гораздо больше идей, но сама по себе группа <b>не делает решение лучше</b>.</p>
   <div class="grid">
@@ -186,7 +267,7 @@ h2{margin-bottom:2rem}
 </section>
 
 <section class="slide">
-  <div class="tag">07 · Анализ последствий</div>
+  <div class="tag">13 · Анализ последствий</div>
   <h2>Смотрите не только <span class="grad">на первый шаг</span></h2>
   <p class="lead sm">Принимая решение, важно смотреть и на то, что произойдёт дальше. Аналитика показывает, что будет после выбора и где решение может дать сбой. <b>Смотрите на последствия заранее, а не когда уже поздно.</b></p>
   <div class="grid">
@@ -198,7 +279,7 @@ h2{margin-bottom:2rem}
 </section>
 
 <section class="slide">
-  <div class="tag">08 · Алгоритм выбора</div>
+  <div class="tag">14 · Алгоритм выбора</div>
   <h2>Метод подбирают <span class="grad">под ситуацию</span></h2>
   <p class="lead sm">Не начинайте с любимого инструмента. <b>Начинайте с типа задачи.</b></p>
   <div class="steps">
@@ -209,6 +290,20 @@ h2{margin-bottom:2rem}
     <div class="card"><div class="n">05</div><h3>Назначьте контроль</h3><p>Владелец (ответственный), метрики, дата пересмотра.</p></div>
   </div>
   <div class="quote">Метод выбран правильно, если ясно, <b>кто за него отвечает</b> и <b>как будет проверен результат</b>.</div>
+</section>
+
+<section class="slide">
+  <div class="tag">15 · Пример</div>
+  <h2>Решение о <span class="grad">дефиците товара</span></h2>
+  <div class="steps">
+    <div class="card"><div class="n">01</div><h3>Диагностика причин</h3><p>Выясняем, почему товара не хватает: отделяем симптомы от настоящих причин.</p></div>
+    <div class="card"><div class="n">02</div><h3>Сравнение вариантов</h3><p>Оцениваем альтернативы по единым критериям и выбираем лучший вариант.</p></div>
+    <div class="card"><div class="n">03</div><h3>Пилотная проверка</h3><p>Проверяем выбранный вариант в небольшом масштабе перед полным запуском.</p></div>
+  </div>
+  <div class="two" style="margin-top:1.5rem">
+    <div class="phase"><div class="badge bad">Не сработало</div><h3>Пересмотреть</h3><p class="lead" style="margin-top:.4rem">Если дефицит не снижается без чрезмерного роста запасов и затрат — уточните причины и пересмотрите вариант.</p></div>
+    <div class="phase"><div class="badge ok">Успех</div><h3>Закрепить</h3><p class="lead" style="margin-top:.4rem">При успехе закрепите решение и продолжайте контроль.</p></div>
+  </div>
 </section>
 
 <section class="slide">
@@ -225,7 +320,14 @@ h2{margin-bottom:2rem}
 
 <section class="slide final">
   <img class="pic turn" src="img/cat-turn.jpg" alt="А теперь ваша очередь">
-  <p class="lead">Тест по теме · лучших ждут подарки 🎁</p>
+  <p class="lead">Тест через <b>Kahoot!</b> · лучших ждут подарки 🎁</p>
+</section>
+
+<section class="slide final">
+  <div class="tag">Группа Э-БА 1-24</div>
+  <h1>Спасибо за <span class="grad">внимание!</span></h1>
+  <p class="lead">С любовью, группа Э-БА 1-24</p>
+  <div class="hearts">❤❤❤</div>
 </section>
 
 </div>
